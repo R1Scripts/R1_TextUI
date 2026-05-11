@@ -113,5 +113,5 @@ exports['R1_TextUI']:ShowTextUI({
 
 Credits
 
-Developed By R1 SCRIPTS: https://r1-scripts.tebex.io/
-Discord R1 SCRIPTS: https://discord.com/invite/VXgNwKb9Ds
+- Developed By R1 SCRIPTS: https://r1-scripts.tebex.io/
+- Discord R1 SCRIPTS: https://discord.com/invite/VXgNwKb9Ds
