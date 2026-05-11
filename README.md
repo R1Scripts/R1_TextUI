@@ -84,8 +84,8 @@ TriggerEvent('R1_TextUI:client:Show', {
 
 Hide Event
 ```
+⟡ Multiple Actions Example
 TriggerEvent('R1_TextUI:client:Hide')
-Multiple Actions Example
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
     style = 'tactical',
@@ -104,6 +104,24 @@ exports['R1_TextUI']:ShowTextUI({
             text = 'Cancel',
             icon = 'fa-solid fa-xmark',
             color = '#ef4444'
+        }
+    }
+})
+
+⟡ Example of an action
+TriggerEvent('R1_TextUI:client:Hide')
+exports['R1_TextUI']:ShowTextUI({
+    position = 'top-center',
+    style = 'tactical',
+    title = 'MONEY',
+    subtitle = 'Available actions',
+    icon = 'fa-solid fa-sack-dollar',
+    actions = {
+        {
+            key = 'G',
+            text = 'Throw money',
+            icon = 'fa-solid fa-money-bill-wave',
+            color = '#22c55e'
         }
     }
 })
