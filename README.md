@@ -41,9 +41,6 @@ Client Export
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
     style = 'tactical',
-    title = 'INTERACTION',
-    subtitle = 'Available actions',
-    icon = 'fa-solid fa-circle-info',
     actions = {
         {
             key = 'E',
@@ -60,21 +57,12 @@ Client Event
 TriggerEvent('R1_TextUI:client:Show', {
     position = 'top-center',
     style = 'tactical',
-    title = 'MONEY',
-    subtitle = 'Available actions',
-    icon = 'fa-solid fa-sack-dollar',
     actions = {
         {
-            key = 'G',
-            text = 'Throw money',
-            icon = 'fa-solid fa-money-bill-wave',
+            key = 'E',
+            text = 'Interact',
+            icon = 'fa-solid fa-hand-pointer',
             color = '#22c55e'
-        },
-        {
-            key = 'X',
-            text = 'Cancel',
-            icon = 'fa-solid fa-xmark',
-            color = '#ef4444'
         }
     }
 })
@@ -85,13 +73,9 @@ TriggerEvent('R1_TextUI:client:Show', {
 Hide Event
 ```
 ⟡ Multiple Actions Example
-TriggerEvent('R1_TextUI:client:Hide')
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
     style = 'tactical',
-    title = 'MONEY',
-    subtitle = 'Available actions',
-    icon = 'fa-solid fa-sack-dollar',
     actions = {
         {
             key = 'G',
@@ -109,13 +93,9 @@ exports['R1_TextUI']:ShowTextUI({
 })
 
 ⟡ Example of an action
-TriggerEvent('R1_TextUI:client:Hide')
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
     style = 'tactical',
-    title = 'MONEY',
-    subtitle = 'Available actions',
-    icon = 'fa-solid fa-sack-dollar',
     actions = {
         {
             key = 'G',
