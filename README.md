@@ -4,6 +4,8 @@
 
 Created by **R1 Scripts**.
 
+<img width="1869" height="335" alt="image" src="https://github.com/user-attachments/assets/5fb389d9-6dc8-4aa3-9574-e128c44e84d5" />
+
 ---
 
 ## Features
