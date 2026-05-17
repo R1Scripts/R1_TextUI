@@ -34,9 +34,9 @@ Created by **R1 Scripts**.
 ensure R1_TextUI
 ```
 
--- Fuente personalizada para la NUI.
--- Debe existir dentro de html/fonts/ y puede ser .ttf, .otf, .woff o .woff2.
--- Si lo dejas en nil o '', usará Segoe UI.
+- Fuente personalizada para la NUI.
+- Debe existir dentro de html/fonts/ y puede ser .ttf, .otf, .woff o .woff2.
+- Si lo dejas en nil o '', usará Segoe UI.
 ```
 Config.FontFile = 'STRIGER.ttf'
 Config.FontFamily = 'R1CustomFont'
