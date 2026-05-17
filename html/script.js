@@ -1,6 +1,7 @@
 const textUI = document.getElementById('textui');
 const box = document.querySelector('.r1-textui');
 const actionsList = document.getElementById('actionsList');
+let activeFontStyle = null;
 
 window.addEventListener('message', function(event) {
     const data = event.data;
@@ -18,6 +19,8 @@ function showTextUI(data) {
     const position = data.position || 'center-left';
     const style = data.style || 'red';
     const mainColor = data.mainColor || '#ff003c';
+
+    applyConfiguredFont(data.fontFile, data.fontFamily);
 
     textUI.className = position;
     textUI.classList.remove('hidden', 'hideAnim');
@@ -73,4 +76,40 @@ function escapeAttr(text) {
         .replaceAll("'", '')
         .replaceAll('<', '')
         .replaceAll('>', '');
+}
+
+function applyConfiguredFont(fontFile, fontFamily) {
+    const cleanFile = String(fontFile || '').trim();
+    const cleanFamily = String(fontFamily || 'R1CustomFont').trim() || 'R1CustomFont';
+
+    if (!cleanFile) {
+        document.documentElement.style.setProperty('--r1-font-family', "'Segoe UI', sans-serif");
+        if (activeFontStyle) {
+            activeFontStyle.remove();
+            activeFontStyle = null;
+        }
+        return;
+    }
+
+    const safeFile = cleanFile.replaceAll('\\', '/').split('/').pop();
+    const safeFamily = cleanFamily.replaceAll('"', '').replaceAll("'", '');
+    const encodedFile = encodeURIComponent(safeFile).replaceAll('%20', ' ');
+
+    if (activeFontStyle) {
+        activeFontStyle.remove();
+        activeFontStyle = null;
+    }
+
+    activeFontStyle = document.createElement('style');
+    activeFontStyle.id = 'r1-custom-font-style';
+    activeFontStyle.innerHTML = `
+        @font-face {
+            font-family: '${safeFamily}';
+            src: url('fonts/${encodedFile}') format('truetype');
+            font-display: swap;
+        }
+    `;
+
+    document.head.appendChild(activeFontStyle);
+    document.documentElement.style.setProperty('--r1-font-family', `'${safeFamily}', 'Segoe UI', sans-serif`);
 }
