@@ -33,6 +33,8 @@ local function ShowTextUI(data)
         position = position,
         style = style,
         mainColor = data.color or styleData.mainColor or Config.DefaultColor,
+        fontFile = Config.FontFile or '',
+        fontFamily = Config.FontFamily or 'R1CustomFont',
         actions = data.actions or {
             {
                 key = 'E',
@@ -67,7 +69,7 @@ end)
 
 RegisterCommand('r1textuitest', function()
     ShowTextUI({
-        position = 'center-left',
+        position = 'bottom-right',
         style = 'red',
         title = 'R SCRIPTS',
         subtitle = 'Sistema de interacción avanzado',
