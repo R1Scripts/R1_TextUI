@@ -50,7 +50,7 @@ Client Export
 ```
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
-    style = 'tactical',
+    style = 'red',
     actions = {
         {
             key = 'E',
@@ -66,7 +66,7 @@ Client Event
 ```
 TriggerEvent('R1_TextUI:client:Show', {
     position = 'top-center',
-    style = 'tactical',
+    style = 'red',
     actions = {
         {
             key = 'E',
@@ -85,7 +85,7 @@ Hide Event
 ⟡ Multiple Actions Example
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
-    style = 'tactical',
+    style = 'red',
     actions = {
         {
             key = 'G',
@@ -105,7 +105,7 @@ exports['R1_TextUI']:ShowTextUI({
 ⟡ Example of an action
 exports['R1_TextUI']:ShowTextUI({
     position = 'top-center',
-    style = 'tactical',
+    style = 'red',
     actions = {
         {
             key = 'G',
